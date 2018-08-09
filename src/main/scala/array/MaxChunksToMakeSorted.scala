@@ -44,6 +44,7 @@ object MaxChunksToMakeSorted {
     val a3 = Array(0,1)
     val a4 = Array(0,4,5,2,1,3)
     val a5 = Array(1,2,3,4,5,0)
+    val a6 = Array(2,1,3,4,4)
 
     println(maxChunksToSorted(a))
     println(maxChunksToSorted(a1))
@@ -51,5 +52,6 @@ object MaxChunksToMakeSorted {
     println(maxChunksToSorted(a3))
     println(maxChunksToSorted(a4))
     println(maxChunksToSorted(a5))
+    println(maxChunksToSorted(a6))
   }
 }
