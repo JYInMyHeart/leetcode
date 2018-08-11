@@ -6,7 +6,7 @@ object SpiralMatrix extends App {
     if(matrix == null || matrix.isEmpty) return result
     val m = matrix.length
     val n = matrix(0).length
-    var count = 1
+    var count = 0
     var left = 0
     var right = n - 1
     var top = 0
