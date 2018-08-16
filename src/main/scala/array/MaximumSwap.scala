@@ -2,8 +2,8 @@ package array
 
 object MaximumSwap extends App {
   def maximumSwap(num: Int): Int = {
-    var t = num.toString.toCharArray
-    var tt = num.toString.sorted.reverse
+    val t = num.toString.toCharArray
+    val tt = num.toString.sorted.reverse
     var i = 0
     var flag = true
     while (flag && i < tt.length) {
