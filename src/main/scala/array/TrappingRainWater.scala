@@ -37,5 +37,24 @@ object TrappingRainWater extends App {
     max
   }
 
-  println(trap(Array(0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1)))
+  def trap1(h:Array[Int]):Int = {
+    var l = 0
+    var r = h.length - 1
+    var water = 0
+    var height = 0
+    while(l < r){
+      while(l < r && height >= h(l)){
+        water += height - h(l)
+        l += 1
+      }
+      while(l < r && height >= h(r)){
+        water += height - h(r)
+        r -= 1
+      }
+      height = math.min(h(l),h(r))
+    }
+    water
+  }
+
+  println(trap1(Array(0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1)))
 }
