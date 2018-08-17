@@ -20,5 +20,4 @@ object FindMinimuminRotatedSortedArrayII extends App {
   }
 
   println(findMin(Array(6,7,1, 2, 3, 4, 5)))
-  Array().min
 }
