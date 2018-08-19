@@ -3,6 +3,7 @@ package array
 import scala.collection.mutable
 
 object FourSum extends App{
+  //this solution will be TLE.It's too slow to finish this question.
   def fourSum(nums: Array[Int], target: Int): List[List[Int]] = {
       var res:mutable.Stack[List[Int]] = mutable.Stack()
       var t:mutable.Stack[Int] = mutable.Stack()
