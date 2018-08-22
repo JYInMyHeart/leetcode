@@ -21,4 +21,5 @@ object SubarrayProductLessThanK extends App {
 
   println(numSubarrayProductLessThanK(Array(10, 5, 2, 6), 100))
   println(numSubarrayProductLessThanK(Array(10, 9, 10, 4, 3, 8, 3, 3, 6, 2, 10, 10, 9, 3), 19))
+
 }
