@@ -30,6 +30,12 @@ object PalindromicSubstrings extends App {
 
   //a more smart solution
   def countSubstrings1(s: String): Int = {
+    var count = 0
+    for (i <- s.toCharArray.indices) {
+      countPalindromic(s, i, i + 1)
+      countPalindromic(s, i, i)
+    }
+    count
     //judge a number whether is palindromic.u can start at pivot.
     def countPalindromic(str: String, left: Int, right: Int) = {
       var i = left
@@ -41,12 +47,7 @@ object PalindromicSubstrings extends App {
       }
     }
 
-    var count = 0
-    for (i <- s.toCharArray.indices) {
-      countPalindromic(s, i, i + 1)
-      countPalindromic(s, i, i)
-    }
-    count
+
   }
 
 
