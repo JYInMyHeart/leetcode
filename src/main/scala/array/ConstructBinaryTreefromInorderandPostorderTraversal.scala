@@ -22,14 +22,15 @@ object ConstructBinaryTreefromInorderandPostorderTraversal extends App {
     build(inorder,postorder,0,inorder.length - 1,postorder.length - 1)
   }
 
-  println(buildTree(Array(9, 3, 15, 20, 7), Array(9, 15, 7, 20, 3)))
-}
-class TreeNode(var _value: Int) {
-  var value: Int = _value
-  var left: TreeNode = _
-  var right: TreeNode = _
+  class TreeNode(var _value: Int) {
+    var value: Int = _value
+    var left: TreeNode = _
+    var right: TreeNode = _
 
-  override def toString: String =
-    s"""$value
-       |$left,$right""".stripMargin
+    override def toString: String =
+      s"""$value
+         |$left,$right""".stripMargin
+  }
+
+  println(buildTree(Array(9, 3, 15, 20, 7), Array(9, 15, 7, 20, 3)))
 }

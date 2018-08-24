@@ -13,8 +13,8 @@ object ConstructBinaryTreefromPreorderandInorderTraversal extends App {
       if(preStart > pre.length - 1 || inStart > inEnd) return null
       val root = new TreeNode(pre(preStart))
       var index = 0
-      var i = inStart
-      while(i <= inEnd){
+      var i = 0
+      while(i < in.length){
         if(in(i) == root.value)
           index = i
         i += 1
@@ -24,6 +24,16 @@ object ConstructBinaryTreefromPreorderandInorderTraversal extends App {
       root
     }
     build(preorder,inorder,0,0,inorder.length - 1)
+  }
+
+  class TreeNode(var _value: Int) {
+    var value: Int = _value
+    var left: TreeNode = _
+    var right: TreeNode = _
+
+    override def toString: String =
+      s"""$value
+         |$left,$right""".stripMargin
   }
 
   println(buildTree(Array(3, 9, 20, 15, 7), Array(9, 3, 15, 20, 7)))
