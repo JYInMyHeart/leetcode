@@ -35,7 +35,7 @@ object PalindromicSubstrings extends App {
       countPalindromic(s, i, i + 1)
       countPalindromic(s, i, i)
     }
-    count
+
     //judge a number whether is palindromic.u can start at pivot.
     def countPalindromic(str: String, left: Int, right: Int) = {
       var i = left
@@ -46,7 +46,7 @@ object PalindromicSubstrings extends App {
         j += 1
       }
     }
-
+    count
 
   }
 
