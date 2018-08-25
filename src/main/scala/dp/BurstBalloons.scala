@@ -17,5 +17,5 @@ object BurstBalloons extends App{
     dp(1)(n)
   }
 
-  println(maxCoins(Array(3, 1,5, 8)))
+  println(maxCoins(Array(3, 4 ,2)))
 }
