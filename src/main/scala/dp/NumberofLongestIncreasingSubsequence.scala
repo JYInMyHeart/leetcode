@@ -20,10 +20,6 @@ object NumberofLongestIncreasingSubsequence extends App {
       }
     }
     var res = 0
-    dp.foreach(print)
-    println()
-    count.foreach(print)
-
       for(i <- dp.indices){
         if(dp(i) == dp.max)
           res += count(i)
