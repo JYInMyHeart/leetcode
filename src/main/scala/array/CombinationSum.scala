@@ -2,7 +2,7 @@ package array
 
 import scala.collection.mutable
 
-object CombinationSum {
+object CombinationSum extends App{
   def combinationSum(candidates: Array[Int], target: Int): List[List[Int]] = {
     var res:mutable.Stack[List[Int]] = mutable.Stack()
     var t:mutable.Stack[Int] = mutable.Stack()
@@ -25,4 +25,6 @@ object CombinationSum {
     dfs(tt,target,0,t,res)
     res.toList
   }
+
+  println(combinationSum(Array(1, 2, 3), 4))
 }
