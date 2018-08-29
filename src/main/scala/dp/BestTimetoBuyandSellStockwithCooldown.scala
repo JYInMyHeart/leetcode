@@ -2,15 +2,18 @@ package dp
 
 object BestTimetoBuyandSellStockwithCooldown extends App{
   def maxProfit(prices: Array[Int]): Int = {
-    val n = prices.length
-    val buy = Array.ofDim[Int](n)
-    val sell = Array.ofDim[Int](n)
-    val cold = Array.ofDim[Int](n)
-    for(i <- 1 until n){
-      buy(i) = math.max(buy(i - 1),cold(i - 1) - prices(i))
-      sell(i) = math.max(buy(i - 1) + prices(i),cold(i - 1))
-      cold(i) = math.max(buy(i - 1),math.max(sell(i - 1),cold(i - 1)))
+    var sell = 0
+    var prev_sell = 0
+    var buy = Integer.MIN_VALUE
+    var prev_buy = 0
+    for (price <- prices) {
+      prev_buy = buy
+      buy = Math.max(prev_sell - price, prev_buy)
+      prev_sell = sell
+      sell = Math.max(prev_buy + price, prev_sell)
     }
-    sell(n - 1) - buy(n - 1)
+    sell
   }
+
+  println(maxProfit(Array(1, 2, 3, 0, 2)))
 }
