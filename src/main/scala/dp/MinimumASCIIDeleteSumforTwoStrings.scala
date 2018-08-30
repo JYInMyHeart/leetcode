@@ -22,6 +22,6 @@ object MinimumASCIIDeleteSumforTwoStrings extends App {
 
 
   println(minimumDeleteSum("delete", "leet"))
-  //  println(minimumDeleteSum("sea", "eat"))
+    println(minimumDeleteSum("sea", "eat"))
 
 }

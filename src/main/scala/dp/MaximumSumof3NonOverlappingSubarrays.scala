@@ -9,9 +9,11 @@ object MaximumSumof3NonOverlappingSubarrays {
     val posRight = Array.ofDim[Int](n)
     val ans = Array.ofDim[Int](3)
     var i = 0
-    while (i < n) sum(i + 1) = sum(i) + nums(i) {
+    while (i < n) {
+      sum(i + 1) = sum(i) + nums(i)
       i += 1
       i - 1
+
     }
     // DP for starting index of the left max sum interval
     i = k
