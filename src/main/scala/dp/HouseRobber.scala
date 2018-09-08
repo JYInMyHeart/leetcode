@@ -17,6 +17,21 @@ object HouseRobber extends App {
     math.max(dp(0),dp(n - 1))
   }
 
+
+  def rob1(nums: Array[Int]): Int = {
+    if(nums.isEmpty) return 0
+    val n = nums.length
+    if(n < 1) return 0
+    var yes = 0
+    var no = 0
+    for(i <- nums){
+      val temp = no
+      no = math.max(no,yes)
+      yes = temp + i
+    }
+    math.max(yes,no)
+  }
+
 //  println(rob(Array(2, 1, 1, 2)))
   println(rob(Array(2, 7, 9, 3,1)))
 }
