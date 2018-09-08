@@ -26,6 +26,6 @@ object MergeIntervals extends App {
   //1,3],[2,6],[8,10],[15,18
   val a = Array(new Interval(1, 4), new Interval(0, 2), new Interval(3,5))
   println(merge(a.toList))
-  Array().min
+
 
 }
