@@ -41,5 +41,5 @@ object GuessNumberHigherorLowerII extends App {
     dp(1)(n)
   }
 
-  println(getMoneyAmount1(10))
+  println(getMoneyAmount1(100))
 }
