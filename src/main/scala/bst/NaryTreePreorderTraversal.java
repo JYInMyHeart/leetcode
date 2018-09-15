@@ -4,23 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-public class NaryTreePostorderTraversal {
+public class NaryTreePreorderTraversal {
     //recursive
-    public List<Integer> postorder(Node root) {
+    public List<Integer> preorder(Node root) {
         List<Integer> ans = new ArrayList<>();
         helper(root,ans);
         return ans;
     }
-
-    public void helper(Node root,List<Integer> ans){
+    public void helper(Node root, List<Integer> ans){
         if(root == null) return;
+        ans.add(root.val);
         for(Node n:root.children){
             helper(n,ans);
         }
-        ans.add(root.val);
     }
-
-
 
     //iterative
     public List<Integer> postorder1(Node root) {
@@ -30,9 +27,9 @@ public class NaryTreePostorderTraversal {
         stack.push(root);
         while(!stack.isEmpty()){
             Node curr = stack.pop();
-            ans.add(0,curr.val);
-            for(Node n:curr.children){
-                stack.push(n);
+            ans.add(curr.val);
+            for(int i = curr.children.size() - 1;i >= 0;i--){
+                stack.push(curr.children.get(i));
             }
         }
         return ans;
