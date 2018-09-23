@@ -11,4 +11,7 @@ object ClimbingStairs {
     dp(n)
   }
 
+  def main(args: Array[String]): Unit = {
+    val Array(strA,strB,strC)="aa,bb".split(",")
+  }
 }
