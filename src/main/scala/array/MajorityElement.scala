@@ -13,4 +13,8 @@ object MajorityElement {
     }
     map.find(_._2 > nums.length / 2).get._1
   }
+  def majorityElement1(nums: Array[Int]): Int = {
+    val t = nums.sorted
+    t(nums.length / 2)
+  }
 }
