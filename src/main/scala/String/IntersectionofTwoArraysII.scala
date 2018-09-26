@@ -1,6 +1,6 @@
 package String
 
-object IntersectionofTwoArrays {
+object IntersectionofTwoArraysII {
   def intersection(nums1: Array[Int], nums2: Array[Int]): Array[Int] = {
     var ans = List[Int]()
     for (i <- nums1) {
