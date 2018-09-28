@@ -10,13 +10,10 @@ object MagicSquaresInGrid extends App {
       while (j <= grid(0).length - 3) {
         if (helper(i, j, grid)) {
           cnt += 1
-          cnt - 1
         }
         j += 1
-        j - 1
       }
       i += 1
-      i - 1
     }
     cnt
   }
@@ -31,16 +28,13 @@ object MagicSquaresInGrid extends App {
         valid(grid(i)(j)) += 1
         valid(grid(i)(j)) - 1
         j += 1
-        j - 1
       }
       i += 1
-      i - 1
     }
     var v = 1
     while (v <= 9) {
       if (valid(v) != 1) return false
       v += 1
-      v - 1
     }
     if ((grid(x)(y) + grid(x)(y + 1) + grid(x)(y + 2)) != 15) return false
     if ((grid(x)(y) + grid(x + 1)(y + 1) + grid(x + 2)(y + 2)) != 15) return false

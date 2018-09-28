@@ -2,7 +2,7 @@ package dp
 
 object PredicttheWinner extends App{
   //O(2^n)
-  def PredictTheWinner(nums: Array[Int]): Boolean = {
+  def predictTheWinner(nums: Array[Int]): Boolean = {
     def winner(nums:Array[Int],left:Int,right:Int,turn:Int):Int = {
       if(left == right)
         return turn * nums(left)
@@ -13,7 +13,7 @@ object PredicttheWinner extends App{
   }
 
   //O(n^2) top-down dp
-  def PredictTheWinner1(nums: Array[Int]): Boolean = {
+  def predictTheWinner1(nums: Array[Int]): Boolean = {
     def winner(nums:Array[Int],left:Int,right:Int,dp:Array[Array[Int]]):Int = {
       if(left == right)
         return nums(left)
@@ -28,7 +28,7 @@ object PredicttheWinner extends App{
   }
 
   //O(n^2) bottom-up dp
-  def PredictTheWinner2(nums: Array[Int]): Boolean = {
+  def predictTheWinner2(nums: Array[Int]): Boolean = {
     val n = nums.length
     val dp = Array.ofDim[Int](n + 1,n)
     for(i <- n to (0,-1)){
