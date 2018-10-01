@@ -1,4 +1,4 @@
-package String
+package string
 
 object BinaryGap extends App {
   def binaryGap(N: Int): Int = {
