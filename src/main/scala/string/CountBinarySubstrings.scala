@@ -1,4 +1,4 @@
-package String
+package string
 
 object CountBinarySubstrings extends App {
   def countBinarySubstrings(s: String): Int = {
