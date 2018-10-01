@@ -1,4 +1,4 @@
-package String
+package string
 
 object FindtheDifference {
   def findTheDifference(s: String, t: String): Char = {
