@@ -1,4 +1,4 @@
-package String
+package string
 
 object ExcelSheetColumnTitle {
   def convertToTitle(n: Int): String = {
