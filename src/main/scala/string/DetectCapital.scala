@@ -1,4 +1,4 @@
-package string
+package String
 
 object DetectCapital extends App {
 

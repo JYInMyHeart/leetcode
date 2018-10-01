@@ -1,4 +1,4 @@
-package string
+package String
 
 object SubdomainVisitCount {
   def subdomainVisits(cpdomains: Array[String]): List[String] = {

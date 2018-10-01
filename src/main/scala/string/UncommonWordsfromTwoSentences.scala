@@ -1,4 +1,4 @@
-package string
+package String
 
 object UncommonWordsfromTwoSentences extends App {
   def uncommonFromSentences(A: String, B: String): Array[String] = {

@@ -1,4 +1,4 @@
-package string
+package String
 
 object RotateString extends App {
   def rotateString(A: String, B: String): Boolean = {

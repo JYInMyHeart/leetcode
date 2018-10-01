@@ -1,4 +1,4 @@
-package string
+package String
 
 object ShortestDistancetoaCharacter extends App {
   def shortestToChar(S: String, C: Char): Array[Int] = {

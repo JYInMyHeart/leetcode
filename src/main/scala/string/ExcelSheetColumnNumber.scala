@@ -1,4 +1,4 @@
-package string
+package String
 
 object ExcelSheetColumnNumber {
   def titleToNumber(s: String): Int = {
