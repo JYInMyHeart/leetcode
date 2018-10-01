@@ -1,4 +1,4 @@
-package string
+package String
 
 object ToLowerCase {
   def toLowerCase(str: String): String = {

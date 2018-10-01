@@ -1,4 +1,4 @@
-package string
+package String
 
 object ReverseWordsinaStringIII {
   def reverseWords(s: String): String = {
