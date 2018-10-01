@@ -1,4 +1,4 @@
-package String
+package string
 
 import scala.collection.mutable
 

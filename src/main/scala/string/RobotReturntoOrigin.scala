@@ -1,4 +1,4 @@
-package String
+package string
 
 object RobotReturntoOrigin extends App {
   def judgeCircle(moves: String): Boolean = {

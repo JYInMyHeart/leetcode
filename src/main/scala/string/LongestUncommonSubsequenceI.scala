@@ -1,4 +1,4 @@
-package String
+package string
 
 object LongestUncommonSubsequenceI {
   def findLUSlength(a: String, b: String): Int = {

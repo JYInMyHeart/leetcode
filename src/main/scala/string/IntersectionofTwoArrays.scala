@@ -1,4 +1,4 @@
-package String
+package string
 
 object IntersectionofTwoArrays {
   def intersection(nums1: Array[Int], nums2: Array[Int]): Array[Int] = {

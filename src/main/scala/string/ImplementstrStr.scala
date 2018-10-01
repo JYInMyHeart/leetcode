@@ -1,4 +1,4 @@
-package String
+package string
 
 object ImplementstrStr {
   def strStr(haystack: String, needle: String): Int = {

@@ -1,4 +1,4 @@
-package String
+package string
 
 object RomantoInteger extends App {
   def romanToInt(s: String): Int = {

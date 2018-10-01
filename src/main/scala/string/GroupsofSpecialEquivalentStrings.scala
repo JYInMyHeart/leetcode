@@ -1,4 +1,4 @@
-package String
+package string
 
 
 object GroupsofSpecialEquivalentStrings extends App{
