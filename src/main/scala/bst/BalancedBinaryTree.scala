@@ -1,6 +1,6 @@
 package bst
 
-object BalancedBinaryTree {
+object BalancedBinaryTree extends App{
   def isBalanced(root: TreeNode): Boolean = {
     def sizeMax(root: TreeNode): Int = {
       if (root == null) return 0
@@ -13,4 +13,6 @@ object BalancedBinaryTree {
         && isBalanced(root.right)
       )
   }
+
+  println(Stream(1, 2, 3).append(Stream(4)).toList)
 }
