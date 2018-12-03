@@ -18,7 +18,6 @@ object ArithmeticSlices extends App {
     }
     res
   }
-
   println(numberOfArithmeticSlices(Array(1, 2, 3, 4)))
   println(numberOfArithmeticSlices(Array(1, 2, 3, 8,9,10)))
 }
