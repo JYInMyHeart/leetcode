@@ -1,2 +1,2 @@
 # leetcode
-just leetcode exercises
+just some leetcode exercises
