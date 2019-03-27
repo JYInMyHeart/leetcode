@@ -13,7 +13,7 @@ public class Finder {
 
     final private static Point[] MOVES = {new Point(1,0), new Point(0,1), new Point(0,-1), new Point(-1,0)};
 
-    final private static Map<Point,String> BACK = new HashMap<>() {{
+    final private static Map<Point,String> BACK = new HashMap<Point, String>() {{
         put(new Point(1, 0), "down");
         put(new Point(0, 1), "right");
         put(new Point(0, -1), "left");
