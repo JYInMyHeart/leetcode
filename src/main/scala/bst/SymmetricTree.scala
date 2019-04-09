@@ -1,5 +1,7 @@
 package bst
 
+
+
 object SymmetricTree {
   def isSymmetric(root: TreeNode): Boolean = {
     def invertTree(root: TreeNode): TreeNode = {
@@ -28,6 +30,38 @@ object SymmetricTree {
         false
     }
     isMirror(root,root)
+  }
+
+  def isSymmetric2(root: TreeNode): Boolean = {
+    import scala.collection.mutable
+    if(root == null) return true
+    val stack = mutable.Stack[TreeNode]()
+    if(root.left != null){
+      if(root.right == null) return false
+      stack.push( root.left)
+      stack.push( root.right)
+    }
+
+    while(stack.nonEmpty){
+      if(stack.size % 2 != 0) return false
+      val right = stack.pop()
+      val left = stack.pop()
+
+      if(left.value != right.value) return false
+      if(left.left != null){
+        if(left.right == null) return false
+        stack.push(left.left)
+        stack.push(left.right)
+      }else if(left.right != null)
+        return false
+      if(right.left != null){
+        if(right.right == null) return false
+        stack.push(right.left)
+        stack.push(right.right)
+      }else if(right.right != null)
+        return false
+    }
+    true
   }
 
 }
