@@ -38,6 +38,7 @@ object SearchinRotatedSortedArray extends App {
     -1
   }
 
+
   println(search(Array(4, 5, 6, 7, 0, 1, 2), 0))
   println(search(Array(4, 5, 6, 7, 0, 1, 2), 7))
   println(search1(Array(4, 5, 6, 7, 0, 1, 2), 0))
