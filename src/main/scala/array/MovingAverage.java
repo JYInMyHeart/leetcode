@@ -26,4 +26,12 @@ public class MovingAverage {
 
         return (double)sum / n;
     }
+
+    public static void main(String[] args) {
+        MovingAverage m = new MovingAverage(3);
+        System.out.println(m.next(1));//= 1
+        System.out.println(m.next(10));/// = (1 + 10) / 2
+        System.out.println(m.next(3) );///= (1 + 10 + 3) / 3
+        System.out.println(m.next(5) );///= (10 + 3 + 5) / 3
+    }
 }
