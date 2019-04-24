@@ -3,7 +3,7 @@ package dp
 object PerfectSquares extends App {
   def numSquares(n: Int): Int = {
 //    math.sqrt(n).toInt
-    val x = math.sqrt(n).toInt
+//    val x = math.sqrt(n).toInt
     val dp = Array.fill[Int](n + 1)(Int.MaxValue)
     dp(0) = 0
     for(j <- 1 to n){
