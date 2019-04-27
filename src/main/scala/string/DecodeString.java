@@ -42,6 +42,9 @@ public class DecodeString {
 
     public static void main(String[] args) {
         String s = "3[b2[c]]";
-        System.out.println(decodeString(s));
+//        System.out.println(decodeString(s));
+        System.out.println(System.getProperty("user.dir"));
+        System.setProperty("user.dir","aaa");
+        System.out.println(System.getProperty("user.dir"));
     }
 }
