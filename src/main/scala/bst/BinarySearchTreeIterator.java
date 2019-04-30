@@ -39,7 +39,7 @@ public class BinarySearchTreeIterator {
         return !values.isEmpty();
     }
 
-    class TreeNode {
+    static class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
