@@ -8,7 +8,6 @@ package linkedlist;
 public class MyLinkedList {
     Node root;
     Node head;
-    Node tail;
     int size;
     class Node{
         Node next;
@@ -23,9 +22,7 @@ public class MyLinkedList {
     }
     /** Initialize your data structure here. */
     public MyLinkedList() {
-        root = new Node(-1);
-        head = root;
-        tail = root;
+
     }
 
     /** Get the value of the index-th node in the linked list. If the index is invalid, return -1. */
@@ -43,24 +40,24 @@ public class MyLinkedList {
     /** Add a node of value val before the first element of the linked list. After the insertion, the new node will be the first node of the linked list. */
     public void addAtHead(int val) {
         size++;
-        if(root.val == -1) {
-            root.val = val;
-            return;
-        }
-        Node newRoot = new Node(val);
-        newRoot.next = root;
-        root = newRoot;
+        Node prev = root;
+        root = new Node(val);
+        root.next = prev;
     }
 
     /** Append a node of value val to the last element of the linked list. */
     public void addAtTail(int val) {
         size++;
-        if(root.val == -1) {
-            root.val = val;
+        Node node = new Node(val);
+        if(root == null) {
+            root = node;
             return;
         }
+        Node tail = root;
+        while(tail.next != null){
+            tail = tail.next;
+        }
         tail.next = new Node(val);
-        tail = tail.next;
     }
 
     /** Add a node of value val before the index-th node in the linked list. If index equals to the length of linked list, the node will be appended to the end of linked list. If index is greater than the length, the node will not be inserted. */
@@ -68,10 +65,15 @@ public class MyLinkedList {
         size++;
         int i = 0;
         Node temp = root;
+        if(index == 0){
+            addAtHead(val);
+            return;
+        }
         while(i < index - 1){
             temp = temp.next;
             i++;
         }
+
         Node next = temp.next;
         Node t = new Node(val);
         temp.next = t;
@@ -80,9 +82,11 @@ public class MyLinkedList {
 
     /** Delete the index-th node in the linked list, if the index is valid. */
     public void deleteAtIndex(int index) {
+        if(index >= size) return;
+        size--;
         int i = 0;
         Node temp = root;
-        while(i < index - 2){
+        while(i < index - 1){
             temp = temp.next;
             i++;
         }
