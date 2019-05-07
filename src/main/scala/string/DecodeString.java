@@ -40,11 +40,29 @@ public class DecodeString {
         return tmp;
     }
 
+    public static int longestPalindrome(final String s) {
+        int n = s.length();
+        int[][] dp  = new int[n][n];
+        int i = n - 1;
+        dp[0][0] = 1;
+        while(i >= 0 ){
+            dp[i][i] = 1;
+            for(int j = i + 1 ;j < n;j++){
+                if(s.charAt(i) == s.charAt(j)){
+                    dp[i][j] = dp[i + 1][j - 1] + 2;
+                }else{
+                    dp[i][j] = Math.max(dp[i + 1][j],dp[i][j - 1]);
+                }
+            }
+            i -= 1;
+        }
+        return dp[0][n - 1];
+    }
+
+
     public static void main(String[] args) {
         String s = "3[b2[c]]";
 //        System.out.println(decodeString(s));
-        System.out.println(System.getProperty("user.dir"));
-        System.setProperty("user.dir","aaa");
-        System.out.println(System.getProperty("user.dir"));
+        System.out.println(longestPalindrome("zyabyz"));
     }
 }

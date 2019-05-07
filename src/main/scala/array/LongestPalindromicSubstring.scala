@@ -23,4 +23,13 @@ object LongestPalindromicSubstring {
     }
     s.substring(left,left + maxlen)
   }
+
+  def main(args: Array[String]): Unit = {
+    println(longestPalindrome("zyabyz").length)
+    println(longestPalindrome("aa").length)
+    println(longestPalindrome("baa").length)
+    println(longestPalindrome("aab").length)
+    println(longestPalindrome("baabcd").length)
+    println(longestPalindrome("baablkj12345432133d").length)
+  }
 }

@@ -20,6 +20,7 @@ object LongestPalindromicSubsequence extends App {
     dp(0)(n - 1)
   }
 
-  println(longestPalindromeSubseq("bbbab"))
+  println(longestPalindromeSubseq("aa"))
+  println(longestPalindromeSubseq("zyabyz"))
 
 }
