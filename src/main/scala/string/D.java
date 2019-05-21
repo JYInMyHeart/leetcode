@@ -20,7 +20,10 @@ public class D {
     public static void getPalinedromicIndex(String s, int start, int end) {
         int st = start;
         int en = end;
-        while(st >= 0 && en < s.length() && s.charAt(st--) == s.charAt(en++));
+        while(st >= 0 && en < s.length() && s.charAt(st) == s.charAt(en)){
+            st--;
+            en++;
+        }
         if(maxlen < en - st - 1){
             left = st + 1;
             maxlen = en - st - 1;
