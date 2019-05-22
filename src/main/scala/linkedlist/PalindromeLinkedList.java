@@ -32,7 +32,7 @@ public class PalindromeLinkedList {
     }
 
     public ListNode reverse(ListNode root){
-        if(root == null) return root;
+        if(root == null) return null;
         ListNode head = null;
         while(root != null){
             ListNode next = root.next;

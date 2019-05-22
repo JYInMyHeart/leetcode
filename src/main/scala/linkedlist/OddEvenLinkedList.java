@@ -42,16 +42,16 @@ public class OddEvenLinkedList {
 
     public ListNode oddEvenList(ListNode head) {
         if(head == null) return head;
-        ListNode even = head;
-        ListNode odd = head.next;
-        ListNode oddhead = odd;
-        while (odd != null  && odd.next !=null){
-            odd.next = odd.next.next;
+        ListNode odd = head;
+        ListNode even = head.next;
+        ListNode evenHead = even;
+        while (even != null  && even.next !=null){
             even.next = even.next.next;
-            odd = odd.next;
+            odd.next = odd.next.next;
             even = even.next;
+            odd = odd.next;
         }
-        even.next = oddhead;
+        odd.next = evenHead;
         return head;
     }
 
