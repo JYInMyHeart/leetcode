@@ -1,7 +1,5 @@
 package graph;
 
-import scala.math.Ordering;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -12,26 +10,29 @@ import java.util.stream.Collectors;
  * @File: NQueens
  * @Time: 22:41 2019/5/24
  */
-public class NQueens {
-    public List<List<String>> solveNQueens(int n) {
-        List<List<String>> res = new ArrayList<>();
+public class NQueensII {
+    int count = 0;
+    public int totalNQueens(int n) {
+
         char[][] test = new char[n][n];
         for(int i = 0; i < n; i++)
             for(int j = 0; j < n; j++)
                 test[i][j] = '.';
-        helper(res,test,0,n);
-        return res;
+        helper(test,0,n);
+        return count;
     }
 
-    public void helper(List<List<String>> res, char[][] nQueues, int row, int n) {
+
+
+    public void helper( char[][] nQueues, int row, int n) {
         if (row == n) {
-            res.add(Arrays.stream(nQueues).map(String::new).collect(Collectors.toList()));
+            count++;
             return;
         }
         for(int col = 0;col < n;col++){
             if(valid(nQueues,n,row,col)){
                 nQueues[row][col] = 'Q';
-                helper(res,nQueues,row + 1,n);
+                helper(nQueues,row + 1,n);
                 nQueues[row][col] = '.';
             }
         }
@@ -52,10 +53,5 @@ public class NQueens {
 
 
         return true;
-    }
-
-    public static void main(String[] args) {
-        NQueens nQueens = new NQueens();
-        System.out.println(nQueens.solveNQueens(4));
     }
 }
