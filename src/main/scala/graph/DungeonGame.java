@@ -29,7 +29,5 @@ public class DungeonGame {
                 {10, 30, -5}
         };
         calculateMinimumHP(a);
-
-
     }
 }
