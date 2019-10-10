@@ -1,6 +1,5 @@
 package string;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -12,14 +11,14 @@ import java.util.Map;
 public class LongestSubstringwithAtMostTwoDistinctCharacters {
     public static int lengthOfLongestSubstringTwoDistinct(String s) {
         int max = 0;
-        Map<Character,Integer> map = new LinkedHashMap<>();
+        Map<Character, Integer> map = new LinkedHashMap<>();
         for (int i = 0; i < s.length(); i++) {
-            map.put(s.charAt(i),map.getOrDefault(s.charAt(i),0) + 1);
-            if(map.size() > 2){
+            map.put(s.charAt(i), map.getOrDefault(s.charAt(i), 0) + 1);
+            if (map.size() > 2) {
                 map.remove(map.keySet().stream().findFirst().get());
-            }else {
-                int val = map.values().stream().reduce((a,b) -> a + b).get();
-                max = Math.max(max,val);
+            } else {
+                int val = map.values().stream().reduce(Integer::sum).get();
+                max = Math.max(max, val);
             }
         }
         return max;
