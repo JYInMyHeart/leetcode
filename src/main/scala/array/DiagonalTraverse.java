@@ -80,7 +80,8 @@ public class DiagonalTraverse {
         };
 //        System.out.println(Arrays.toString(findDiagonalOrder1(a)));
 
-        System.out.println(spiralOrder(a));
+//        System.out.println(spiralOrder(a));
+        System.out.println(new DiagonalTraverse().longestCommonPrefix(new String[]{"asb","asfa","asfa"},0,2));
 
     }
 
@@ -146,5 +147,65 @@ public class DiagonalTraverse {
         }
         if(last != 0) buffer.append(last);
         return buffer.reverse().toString();
+    }
+
+
+    public String longestCommonPrefix(String[] strs) {
+        int len = strs.length;
+
+        if(len == 0) return "";
+        int min = Arrays.stream(strs).map(String::length).min(Integer::compareTo).get();
+
+        int[] i = {0};
+        for(;i[0] < min;i[0]++){
+            if(!Arrays.stream(strs).allMatch(x -> x.charAt(i[0]) == strs[0].charAt(i[0]))) break;
+        }
+        return strs[0].substring(0,i[0]);
+    }
+
+    public String longestCommonPrefix1(String[] strs) {
+        int len = strs.length;
+
+        if(len == 0) return "";
+        int min = Arrays.stream(strs).map(String::length).min(Integer::compareTo).get();
+
+        int left = 0;
+        int right = min;
+        while(left <= right){
+            int mid = left + (right - left) / 2;
+            if(helper(strs,mid)){
+                left = mid + 1;
+            }else
+                right = mid - 1;
+        }
+        return strs[0].substring(0,(left + right) / 2);
+    }
+
+
+    public boolean helper(String[] strs, int index){
+        for(int i = 0;i < strs.length;i++){
+            if(!strs[i].startsWith(strs[0].substring(0,index)))
+                return false;
+        }
+        return true;
+    }
+
+
+    public String longestCommonPrefix(String[] strs,int l,int r){
+        if(l >= r) return strs[l];
+        int mid = (r - l) / 2 + l;
+        String left = longestCommonPrefix(strs,l,mid);
+        String right = longestCommonPrefix(strs,mid + 1,r);
+        return helper(left,right);
+    }
+
+    public String helper(String str1,String str2){
+        int i = 0;
+        while (i < (Math.min(str1.length(),str2.length()))){
+            if(str1.charAt(i) != str2.charAt(i))
+                return str1.substring(0,i);
+            i++;
+        }
+        return str1.length() > str2.length() ? str2 : str1;
     }
 }
