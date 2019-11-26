@@ -1,5 +1,7 @@
 package array;
 
+import java.util.Arrays;
+
 /**
  * @Author: xck
  * @File: ArrayPairSum
@@ -24,5 +26,19 @@ public class ArrayPairSum {
             d = (2 + arr[lim + i] - d) % 2;
         }
         return sum;
+    }
+
+    public static void incr(int[] nums){
+        int tmp = nums[nums.length - 1];
+        for(int i = nums.length - 1;i >= 1;i--){
+            nums[i] = nums[i - 1];
+        }
+        nums[0] = tmp;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = new int[]{1,2,3,4,5,6,7};
+        incr(nums);
+        System.out.println(Arrays.toString(nums));
     }
 }
