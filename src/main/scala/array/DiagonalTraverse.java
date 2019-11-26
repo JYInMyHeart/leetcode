@@ -81,7 +81,7 @@ public class DiagonalTraverse {
 //        System.out.println(Arrays.toString(findDiagonalOrder1(a)));
 
 //        System.out.println(spiralOrder(a));
-        System.out.println(new DiagonalTraverse().longestCommonPrefix(new String[]{"asb","asfa","asfa"},0,2));
+        System.out.println(new DiagonalTraverse().longestCommonPrefix(new String[]{"asb","asfa","asfa","asfa"},0,3));
 
     }
 
@@ -192,10 +192,10 @@ public class DiagonalTraverse {
 
 
     public String longestCommonPrefix(String[] strs,int l,int r){
-        if(l >= r) return strs[l];
+        if(l >= r - 1) return strs[l];
         int mid = (r - l) / 2 + l;
-        String left = longestCommonPrefix(strs,l,mid);
-        String right = longestCommonPrefix(strs,mid + 1,r);
+        String left = longestCommonPrefix(strs,l,mid - 1);
+        String right = longestCommonPrefix(strs,mid ,r);
         return helper(left,right);
     }
 
