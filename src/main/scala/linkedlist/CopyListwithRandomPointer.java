@@ -53,5 +53,4 @@ public class CopyListwithRandomPointer {
             random = _random;
         }
     };
-
 }
