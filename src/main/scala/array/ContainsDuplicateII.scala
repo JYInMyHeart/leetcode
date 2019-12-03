@@ -27,7 +27,7 @@ object ContainsDuplicateII extends App {
     for (i <- nums.indices) {
       if (map.contains(nums(i))) list :+= (i - map(nums(i)))
       map += (nums(i) -> i)
-    }_
+    }
     list.exists(_ <= k)
   }
 }

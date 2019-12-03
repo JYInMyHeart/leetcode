@@ -45,5 +45,29 @@ public class IntersectionofTwoArraysII {
         }
         return Arrays.copyOfRange(nums1,0,k);
     }
+
+
+
+    public List<Integer> topKFrequent(int[] nums, int k) {
+        Map<Integer,Integer> map = new HashMap<>();
+        for(int i:nums){
+            map.put(i,map.getOrDefault(i,0) + 1);
+        }
+
+        List<Integer> list = new ArrayList<>();
+        Map<Integer,Integer> map1 = new HashMap<>();
+        for(Integer i:map.keySet()){
+            map1.put(map.get(i),i);
+        }
+        Set<Integer> set = map1.keySet();
+
+        List<Integer> list1 = new ArrayList<>(set);
+        Collections.sort(list1);
+        Collections.reverse(list1);
+        for(int i = 0;i < k;i++){
+            list.add(map1.get(list1.get(i)));
+        }
+        return list;
+    }
 }
 
