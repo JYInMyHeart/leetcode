@@ -40,4 +40,14 @@ public class UniqueWordAbbreviation {
         }
         return true;
     }
+
+    public static void main(String[] args) {
+
+    }
+}
+
+class A{
+    public static void main(String[] args) {
+
+    }
 }
