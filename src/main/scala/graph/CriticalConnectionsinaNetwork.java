@@ -11,51 +11,49 @@ import java.util.List;
  */
 public class CriticalConnectionsinaNetwork {
 
-    public static List<List<Integer>> criticalConnections(int n, List<List<Integer>> connections) {
+    int time = 0;
 
-        int[] nums = new int[n];
-
-        List<List<Integer>> result = new ArrayList<>();
-        int len = connections.size();
-
-        List<List<Integer>> temp = new ArrayList<>(connections);
-        for (int i = 0; i < len; i++) {
-            List<List<Integer>> tmp = new ArrayList<>();
-            tmp.addAll(temp.subList(0,i));
-            tmp.addAll(temp.subList(i + 1,len));
-            Arrays.fill(nums, -1);
-            if(!vaildGraph(n,tmp,nums))
-                result.add(connections.get(i));
+    public List<List<Integer>> criticalConnections(int n, List<List<Integer>> connections) {
+        int[] disc = new int[n], low = new int[n];
+        List<Integer>[] graph = new ArrayList[n];
+        List<List<Integer>> res = new ArrayList<>();
+        Arrays.fill(disc, -1);
+        for (int i = 0; i < n; i++) {
+            graph[i] = new ArrayList<>();
+        }
+        // build graph
+        for (int i = 0; i < connections.size(); i++) {
+            int from = connections.get(i).get(0), to = connections.get(i).get(1);
+            graph[from].add(to);
+            graph[to].add(from);
         }
 
-        return result;
-    }
-
-    public static boolean vaildGraph(int n, List<List<Integer>> connections,int[] nums){
-
-        for(List<Integer> list:connections){
-            int src = list.get(0);
-            int desc = list.get(1);
-            int x = find(nums,src);
-            int y = find(nums,desc);
-            if(x == y) return false;
-            nums[x] = y;
+        for (int i = 0; i < n; i++) {
+            if (disc[i] == -1) {
+                dfs(i, low, disc, graph, res, i);
+            }
         }
-        return connections.size() == n - 1;
+        return res;
     }
 
-    public static int find(int[] nums, int index){
-        if(nums[index] == -1) return index;
-        return find(nums,nums[index]);
-    }
-
-
-    public static void main(String[] args) {
-        //4
-        //[[0,1],[1,2],[2,0],[1,3]]
-        System.out.println(criticalConnections(4, Arrays
-            .asList(Arrays.asList(0, 1), Arrays.asList(1, 2), Arrays.asList(2, 0),
-                Arrays.asList(1, 3))));
+    private void dfs(int u, int[] low, int[] disc, List<Integer>[] graph, List<List<Integer>> res,
+        int pre) {
+        disc[u] = low[u] = ++time;
+        for (int j = 0; j < graph[u].size(); j++) {
+            int v = graph[u].get(j);
+            if (v == pre) {
+                continue;
+            }
+            if (disc[v] == -1) {
+                dfs(v, low, disc, graph, res, u);
+                low[u] = Math.min(low[u], low[v]);
+                if (low[v] > disc[u]) {
+                    res.add(Arrays.asList(u, v));
+                }
+            } else {
+                low[u] = Math.min(low[u], disc[v]);
+            }
+        }
     }
 
 }
