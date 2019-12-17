@@ -8,6 +8,8 @@ public class Test {
     public static void main(String[] args) {
         System.out.println(test(4,4));
         System.out.println(josephus(4,4));
+        String re = "s/^\\s*$//g";
+
     }
 
     static int test(int n,int m) {
