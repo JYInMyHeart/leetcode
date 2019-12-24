@@ -1,5 +1,7 @@
 package string;
 
+import java.util.concurrent.Semaphore;
+
 /**
  * @Author: xck
  * @File: StringCompression
@@ -21,6 +23,5 @@ public class StringCompression {
             }
         }
         return write;
-
     }
 }
