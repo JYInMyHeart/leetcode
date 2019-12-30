@@ -1,5 +1,6 @@
 package string;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -17,10 +18,7 @@ public class UniqueWordAbbreviation {
     public UniqueWordAbbreviation(String[] dictionary) {
         cache = new HashSet<>();
 
-        for(String str:dictionary){
-            cache.add(str);
-
-        }
+        cache.addAll(Arrays.asList(dictionary));
         for(String str:cache){
             String tmp = str.length() > 2 ? ("" + str.charAt(0) + (str.length() - 2) + str.charAt(str.length() - 1)) : str;
             map.put(tmp,map.getOrDefault(tmp,0) + 1);
@@ -46,8 +44,3 @@ public class UniqueWordAbbreviation {
     }
 }
 
-class A{
-    public static void main(String[] args) {
-
-    }
-}
