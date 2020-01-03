@@ -24,6 +24,7 @@ public class NextPermutationJava {
             }
         }
         reverseArray(nums,0,nums.length - 1);
+        System.out.println(Arrays.toString(nums));
     }
 
     private static  void reverseArray(int[] nums, int begin, int end){

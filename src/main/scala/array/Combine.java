@@ -32,4 +32,9 @@ public class Combine {
         }
     }
 
+    public static void main(String[] args) {
+        Combine combine = new Combine();
+        System.out.println(combine.combine(4, 2));
+    }
+
 }
